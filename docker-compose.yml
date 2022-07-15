@@ -1,0 +1,15 @@
+services:
+  scancentral-ctrl:
+    image: 'scancentral-ctrl'
+    build: 
+      context: .
+    container_name: scancentral-ctrl
+    hostname: scancentral-ctrl
+    restart: always
+    ports:
+      - 8181:8080
+    volumes:
+      - sc-controller:/usr/local/tomcat/webapps
+
+volumes:
+  sc-controller:
